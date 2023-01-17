@@ -1,0 +1,26 @@
+{
+  "name": "prueba-tecnica-medica",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irlandakelly/prueba-tecnica-medica.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irlandakelly/prueba-tecnica-medica/issues"
+  },
+  "homepage": "https://github.com/irlandakelly/prueba-tecnica-medica#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
