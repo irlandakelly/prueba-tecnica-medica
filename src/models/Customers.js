@@ -1,5 +1,6 @@
 //import sequelize
 var Sequelize = require('sequelize');
+
 // importing connection database
 var sequelize = require('../database');
 

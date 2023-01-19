@@ -1,25 +1,10 @@
-// import dotenv
-require('dotenv').config()
-console.log(process.env)
 // import controller
 const controller = {}
 // import model
 var Customers = require('../models/Customers');
 
 
-
-controller.index = (req, res) => {
-  const data = {
-    name: "John Smith",
-    age: 20,
-    city: "London"
-  }
-
-  res.json(data);
-};
-
-//
-
+// retrieve all database records
 controller.list = async (req, res) => {
   try {
     const response = await Customers.findAll()
@@ -40,6 +25,7 @@ controller.list = async (req, res) => {
   }
 }
 
+// create new database record
 controller.create = async (req, res) => {
   
   try {
@@ -66,7 +52,7 @@ controller.create = async (req, res) => {
   }
 }
 
-
+// update existing database record by id
 controller.update = async (req, res) => {
   try {
     const {name, email, address, phone } = req.body
@@ -97,6 +83,7 @@ controller.update = async (req, res) => {
   }
 }
 
+// retieve single database record by id
 controller.get = async (req, res) => {
   try {
     const { id } = req.params;
@@ -119,6 +106,7 @@ controller.get = async (req, res) => {
   }
 }
 
+// delete single database record by id
 controller.delete = async (req, res) => {
   try {
     const { id } = req.params;
