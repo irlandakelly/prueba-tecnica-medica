@@ -1,0 +1,32 @@
+# docker-compose.yml
+version: "3.8"
+services:
+  app:
+    container_name: api
+    restart: on-failure
+    build: .
+    depends_on:
+      - postgres
+    environment:
+      DB_USER: medica
+      DB_PASS: medica
+      DB_NAME: medica
+      DB_HOST: host.docker.internal
+      NODE_ENV: development
+      PORT: 3000
+    ports:
+      - "3000:3000"
+    command: npm run dev
+    volumes:
+      - .:/app/
+      - /app/node_modules
+
+  postgres:
+    container_name: database
+    image: postgres:12
+    ports:
+      - "35432:5432"
+    environment:
+      POSTGRES_USER: medica
+      POSTGRES_PASSWORD: medica
+      POSTGRES_DB: medica

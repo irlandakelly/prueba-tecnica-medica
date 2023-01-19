@@ -1,12 +1,12 @@
 var Sequelize = require('sequelize');
 
 const database = new Sequelize(
-  'medica', // name database
-  'medica', // user database
-  'medica', // password database
+  process.env.DB_NAME, 
+  process.env.DB_USER, 
+  process.env.DB_PASSWORD, 
   {
-    host: 'localhost',
-    dialect: 'postgres' // mariadb / sqlite / postgres
+    host: 'database',
+    dialect: 'postgres' 
   }
 );
 

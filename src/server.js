@@ -1,6 +1,7 @@
 const express =  require("express");
 const app = express();
 
+
 // Settings
 app.set('port', process.env.PORT || 3000);
 
@@ -15,5 +16,5 @@ app.listen(app.get('port'),() => {
     console.log("Start server on port " + app.get('port'));
 });
 
-const routes = require('./routes');
+const routes = require('./routes/routes');
 app.use('/test', routes);
